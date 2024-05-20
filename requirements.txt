@@ -1,0 +1,10 @@
+Flask==2.3.2
+Flask_Login==0.6.2
+flask_sqlalchemy==3.1.1
+keras==2.15.0
+numpy==1.25.0
+opencv_contrib_python==4.9.0.80
+opencv_python==4.8.1.78
+SQLAlchemy==2.0.19
+ultralytics==8.0.222
+Werkzeug==2.3.6

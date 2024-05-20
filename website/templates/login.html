@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduk | Log In</title>
+    <link rel="stylesheet" href="../static/assets/css/login.css">
+    <script src="https://kit.fontawesome.com/a2ed61521a.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <h2 class="/">Eduk
+            </h2>
+        </a>
+        <nav class="navigation">
+            <a href="/">HOME</a>
+
+        </nav>
+    </header>
+
+    <div class="messageContainer">
+        {% if message is not none %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ message }}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="messageContainer">
+        {% if success_message is not none %}
+        <div class="alertSuccess">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ success_message }}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="containerMain">
+        <div class="form-box">
+            <h1 class="portal-title">{{ role.capitalize() }} Portal</h1>
+            <h2 id="title">Log In</h2>
+            <form action="/login" method="post">
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email" required>
+
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password" required>
+
+                    </div>
+
+                </div>
+                <div class="button-field">
+                    <button type="submit" id="loginBtn">Log In</button>
+                </div>
+
+                <div class="formfooter">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="/signup/{{ role.lower() }}" class="signup-now">Sign up Now!</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <style>
+        .alert {
+            opacity: 1;
+            transition: opacity 0.6s;
+            /* 600ms to fade out */
+        }
+    </style>
+
+    <script>
+        // Get all elements with class="closebtn"
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+
+        // Loop through all close buttons
+        for (i = 0; i < close.length; i++) {
+            // When someone clicks on a close button
+            close[i].onclick = function () {
+
+                // Get the parent of <span class="closebtn"> (<div class="alert">)
+                var div = this.parentElement;
+
+                // Set the opacity of div to 0 (transparent)
+                div.style.opacity = "0";
+
+                // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+                setTimeout(function () { div.style.display = "none"; }, 600);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

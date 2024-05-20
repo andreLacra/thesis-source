@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduk</title>
+  <link rel="stylesheet" href="../static/assets/css/selectRole.css">
+  <script src="https://kit.fontawesome.com/a2ed61521a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <a href="/">
+      <h2 class="eduk">Eduk
+      </h2>
+    </a>
+    <nav class="navigation">
+      <a href="/">HOME</a>
+    </nav>
+  </header>
+
+
+  <div class="container">
+    <div class="form-box">
+      <h1>Select Your Role</h1>
+      <form action="/get-role" method="POST"> <!-- Changed method to POST -->
+        <div class="role-buttons">
+          <button class="educator" type="submit" name="role" value="educator" aria-label="Login as Educator">
+            <i class="fa-solid fa-school"></i>
+            Educator
+          </button>
+
+          <button class="educator" type="submit" name="role" value="coordinator" aria-label="Login as Coordinator">
+            <i class="fa-solid fa-school"></i>
+            Coordinator
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
